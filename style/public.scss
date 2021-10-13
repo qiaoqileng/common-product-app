@@ -1,0 +1,228 @@
+$row-height: 96rpx;
+$main-color: #2979FF;
+ .uni-page-head-btn{
+    margin-right: 24rpx;
+  }
+.main-color{
+	color: $main-color;
+}
+.main-bg-color{
+	background: $main-color;
+}
+.flex-row {
+	display: flex;
+}
+
+.flex-center {
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-row-center {
+	@extend .flex-row;
+	@extend .flex-center;
+}
+ 
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-column-center {
+	@extend .flex-column;
+	@extend .flex-center;
+}
+
+.empty-area {
+	margin-top: 160rpx;
+	height: 160rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bg-white {
+	background-color: #FFFFFF;
+}
+
+.color-white {
+	color: #FFFFFF;
+}
+
+.row-height{
+	min-height: $row-height;
+}
+
+.row-style{
+	padding: 0 16rpx;
+	min-height: 96rpx;
+	background-color: #fff;
+	text-align: center;
+	min-height: $row-height;
+}
+
+.b_top {
+	border-top: 1px solid $u-bg-color;
+}
+
+.b_bottom {
+	border-bottom: 1px solid $u-bg-color;
+}
+
+.bg-gray {
+	background-color: $uni-bg-color;
+}
+
+.full-chart-wrapper {
+	width: 750rpx;
+	height: 500rpx;
+	background-color: #FFFFFF;
+}
+
+.full-chart {
+	width: 750rpx;
+	height: 500rpx;
+}
+
+.chart-wrapper {
+	width: 750rpx;
+	height: 360rpx;
+	background-color: #FFFFFF;
+	display: flex;
+	flex-direction: row;
+}
+
+.chart {
+	flex: 1;
+	width: 750rpx;
+	height: 360rpx;
+}
+
+.chart-tips {
+	width: 750rpx;
+	height: 360rpx;
+	line-height: 360rpx;
+	text-align: center;
+}
+
+.charts-wrapper{
+	width: 750rpx;
+	height: 250rpx;
+	background-color: #FFFFFF;
+	display: flex;
+	flex-direction: row;
+}
+
+.charts {
+	flex: 1;
+	width: 375rpx;
+	height: 250rpx;
+}
+.charts-tips {
+	flex: 1;
+	width: 375rpx;
+	height: 250rpx;
+	line-height: 250rpx;
+	text-align: center;
+}
+
+.match-width {
+	width: 100%;
+}
+
+.match-height {
+	height: 100%;
+}
+
+.text-single-line {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.arc-shaped-bg {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.arc-shaped-bg::after {
+	content: '';
+	width: 120%;
+	height: 160rpx;
+	position: absolute;
+	left: -10%;     //椭圆左边隐藏10%，右边隐藏10%
+	top: -0;
+	z-index: -1;
+	border-radius: 0 0 50% 50%;  //左上角，右上角，右下角，左下角
+	background-color: $u-type-primary;
+}
+
+.building-bg {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.building-bg::after {
+	content: '';
+	width: 100%;
+	height: 300rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	background: url('/static/images/bg-zhengfu.png') no-repeat;
+	background-size: 100% 100%;
+}
+
+.bg-white-radius {
+	background-color: #FFFFFF;
+	border-radius: 12rpx;
+}
+
+.bg-color-radius {
+	background-color: #f3f4f6;
+	border-radius: 12rpx;
+}
+
+.panel{
+	background-color: #FFFFFF;
+	border-radius: 12rpx;
+	margin: 0rpx 24rpx;
+	padding: 24rpx;
+}
+.b-corner{
+  border-radius: 12rpx;
+}
+.sub-title::before{
+	content: '';
+	width: 8rpx;
+	height: 30rpx;
+	display: inline-block;
+	margin-right: 12rpx;
+	color: #FF9900;
+	background-color: #FF9900;
+	vertical-align: middle;
+}
+
+.max-2-height-txt {
+	word-break: break-all;
+	display: -webkit-box;
+	/* autoprefixer: off */
+	-webkit-box-orient: vertical;
+	 /* autoprefixer: on */
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.word-break-all{
+	word-break: break-all;
+}
