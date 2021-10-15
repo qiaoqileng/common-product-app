@@ -1,6 +1,6 @@
 <template>
-	<view :class="{'flex-end':option.right}" class="f-button" @click="option.click && option.click(form,option)">
-		<view >{{option.placeholder || '请选择'}}</view>
+	<view :class="{'flex-end':option.right}" class="f-button" @click="click ? click(form,option) : (option.click && option.click(form,option))">
+		<view >{{option.content || option.placeholder || '请选择'}}</view>
 		<u-icon name="arrow-right"></u-icon>
 	</view>
 </template>
@@ -20,6 +20,12 @@
 				default(){
 					return {}
 				}
+			},
+			click:{
+				type:Function,
+				default(){
+					return undefined
+				}
 			}
 		},
 		data() {
@@ -29,7 +35,7 @@
 		},
 		methods:{
 			
-		}
+		},
 	}
 </script>
 

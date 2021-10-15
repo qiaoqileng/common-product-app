@@ -59,6 +59,36 @@
 			}
 		]
 	},{
+		label:'select',
+		key:'select',
+		type:'select',
+		right:true,
+		arrayDisplayKey:'displayName',
+		arrayValueKey:'id',
+		array:[{id:0,displayName:'否',idcardNumber:'650105197208141348'},{id:1,displayName:'是',idcardNumber:'330122199906063332'}],
+		placeholder:'请选择select',
+		followUpKeys:[{'linkageKey':'linkage',dataKey:'idcardNumber'}],
+		rules:[
+			{
+				required: true, 
+				message: '请选择xxx', 
+			}
+		]
+	},{
+		label:'联动组件',
+		key:'linkage',
+		type:'text',
+		type2:'text',
+		content:'多多少少苏',
+		right:true,
+		rules:[
+			{
+				min: 5, 
+				message: '简介不能少于5个字', 
+				trigger: 'change'
+			}
+		]
+	},{
 		label:'textarea输入框',
 		key:'content',
 		type:'textarea',

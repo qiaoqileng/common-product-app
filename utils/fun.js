@@ -28,8 +28,12 @@ export const formUtil = {
 		let rules = {}
 		if (commonUtil.isListLegal(formList)){
 			formList.forEach(item=>{
-				const {key,rules:_rules,content=''} = item
+				let {key,rules:_rules,content} = item
 				if (key) {
+					if (!content){
+						item.content = ''
+						content = ''
+					}
 					form[key] = content
 					if (commonUtil.isListLegal(_rules)){
 						rules[key] = _rules
@@ -55,5 +59,34 @@ export const commonUtil = {
 	 */
 	isObjLegal(obj){
 		return obj && Object.keys(obj).length > 0 && obj.constructor === Object
-	}
+	},
+	isStrEmpty(value) {
+		if (value === undefined || value === null || value === '') {
+			return true;
+		}
+		return false;
+	},
+	getValue(obj={},key){
+		if (this.isStrEmpty(key)){
+			return ''
+		} else if(key.indexOf('.')===-1){
+			return obj[key]
+		} else {
+			let arr = key.split('.')
+			let first = arr.shift()
+			let value = this.getValueByArrKey(obj[first],arr)
+			return value
+		}
+	},
+	getValueByArrKey(obj={},keys=[]){
+		if (keys.length === 0){
+			return ''
+		} else if (keys.length === 1) {
+			return obj[keys.shift()]
+		} else {
+			let first = keys.shift()
+			let value = this.getValueByArrKey(obj[first],keys)
+			return value
+		}
+	},
 }
