@@ -1,6 +1,8 @@
 {
 	"easycom": {
-		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
+		"^c-(.*)": "@/components/c-$1/c-$1.vue",
+		"^f-(.*)": "@/components/f-$1/f-$1.vue"
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{

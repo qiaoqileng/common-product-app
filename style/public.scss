@@ -18,6 +18,36 @@ $main-color: #2979FF;
 	justify-content: center;
 }
 
+.flex-start {
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.flex-row-start {
+	@extend .flex-row;
+	@extend .flex-start;
+}
+
+.flex-column-start {
+	@extend .flex-column;
+	@extend .flex-start;
+}
+
+.flex-end {
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.flex-row-end {
+	@extend .flex-row;
+	@extend .flex-end;
+}
+
+.flex-column-end {
+	@extend .flex-column;
+	@extend .flex-end;
+}
+
 .flex-row-center {
 	@extend .flex-row;
 	@extend .flex-center;
