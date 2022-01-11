@@ -11,6 +11,9 @@
 				demoList:[{
 					title:'公共组件',
 					url:'/pages/demo/component/index'
+				},{
+					title:'websocket',
+					url:'/pages/demo/websocket'
 				}]
 			}
 		},

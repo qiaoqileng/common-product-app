@@ -27,16 +27,28 @@
 			return {
 				showSelector:false,
 				selectorRange:[],
+				parent:{}
 			};
 		},
 		methods:{
 			 click(form,option){
-				const {array,domain} = option
+				const {array,fetchApi,fetchParams} = option
 				if (commonUtil.isListLegal(array)){
 					this.selectorRange = array
 					this.showSelector = true
-				} else if (domain){//TODO 之后可以做动态获取字典项的
-					
+				} else if (fetchApi){//TODO 之后可以做动态获取字典项的
+					fetchApi(fetchParams).then(res=>{
+						const {code,data} = res || {}
+						if (code === 200){
+						  this.option.array = data || []
+						  this.selectorRange = this.option.array
+						  this.showSelector = true
+						} else {
+						  commonUtil.toastErr(res)
+						}
+					  }).catch(res=>{
+						  commonUtil.toastErr(res)
+					  })
 				} else {
 					console.error('select array is none')
 				}
@@ -51,10 +63,40 @@
 				
 				if (commonUtil.isListLegal(this.option.followUpKeys)){
 					this.option.followUpKeys.forEach(item=>{
-						this.form[item.linkageKey] = commonUtil.getValue(selected,item.dataKey)
+						if (item.linkageKey){
+							this.form[item.linkageKey] = commonUtil.getValue(selected,item.dataKey)
+						}
+						if (item.linkageKey){//自动填充的逻辑
+							if (item.dataKey){
+								this.form[item.linkageKey] = commonUtil.getValue(selected,item.dataKey)
+							} else if (item.linkageText){
+							 let linkage = item.linkageText(result)
+							 let linkageValue = linkage
+							 if (typeof linkage === 'object' && this.parent.originArray){
+								 let find = this.parent.originArray.find(p=>p.key === item.linkageKey)
+								if (find){
+									let linkageDisplay = linkage[find.arrayDisplayKey || 'name'] 
+									linkageValue = linkage[find.arrayValueKey || 'id']
+									find.content = linkageDisplay
+								}
+								
+							 }
+							 this.form[item.linkageKey] = linkageValue
+							}
+						}
+						if (item.linkageHiddenKey && this.parent && this.parent.originArray){
+							let find = this.parent.originArray.find(p=>p.key === item.linkageHiddenKey)
+							if (find){
+								find.hidden = item.judgeFun && item.judgeFun(selected)
+							}
+						}
 					})
 				}
 			},
+		},
+		mounted() {
+			this.parent = this.$u.$parent.call(this, 'f-form-item');
+			console.log(this.parent)
 		}
 	}
 </script>

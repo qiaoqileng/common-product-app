@@ -16,7 +16,7 @@
 			@tap.stop.prevent
 			:style="[style]"
 		>
-			<view class="u-mode-center-box" @tap.stop.prevent @touchmove.stop.prevent v-if="mode == 'center'" :style="[centerStyle]">
+			<view class="u-mode-center-box" @tap.stop.prevent @touchmove.stop.prevent v-if="mode == 'center'" :class="{'u-empty-bg':emptyBg}" :style="[centerStyle]">
 				<u-icon
 					@click="close"
 					v-if="closeable"
@@ -72,6 +72,10 @@
 export default {
 	name: 'u-popup',
 	props: {
+    emptyBg: {
+    	type: Boolean,
+    	default: false
+    },
 		/**
 		 * 显示状态
 		 */
@@ -452,5 +456,8 @@ export default {
 .u-close--bottom-right {
 	right: 30rpx;
 	bottom: 30rpx;
+}
+.u-empty-bg{
+  background-color: transparent !important;
 }
 </style>

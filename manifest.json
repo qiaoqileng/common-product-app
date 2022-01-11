@@ -28,7 +28,8 @@
             "Bluetooth" : {},
             "UIWebview" : {},
             "VideoPlayer" : {},
-            "iBeacon" : {}
+            "iBeacon" : {},
+            "Statistic" : {}
         },
         /* 应用发布信息 */
         "distribute" : {
@@ -57,6 +58,7 @@
                     "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
                     "<uses-permission android:name=\"android.permission.READ_SMS\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
                     "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
                     "<uses-permission android:name=\"android.permission.SEND_SMS\"/>",
                     "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
@@ -64,6 +66,7 @@
                     "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SMS\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>",
                     "<uses-permission android:name=\"android.permission.BLUETOOTH\"/>",
                     "<uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\"/>"
                 ],
@@ -96,6 +99,9 @@
                     "360" : {}
                 }
             }
+        },
+        "uniStatistics" : {
+            "enable" : true
         }
     },
     /* 快应用特有相关 */
@@ -106,19 +112,96 @@
         "setting" : {
             "urlCheck" : false
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
     },
     "mp-alipay" : {
-        "usingComponents" : true
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
     },
     "mp-baidu" : {
-        "usingComponents" : true
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
     },
     "mp-toutiao" : {
-        "usingComponents" : true
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
     },
     "uniStatistics" : {
-        "enable" : false
+        "enable" : true
     },
-    "vueVersion" : "2"
+    "vueVersion" : "2",
+    "h5" : {
+        "uniStatistics" : {
+            "enable" : true
+        },
+        "devServer" : {
+            // "port": 80,
+            // "https": true,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/api" : {
+                    // 开发服务器
+                    // "target" : "http://172.16.9.64:8001",
+                    // 季兵
+                    // "target" : "http://172.16.66.161:8001/pmsbim",
+                    // 提测服务器
+                    "target" : "http://172.16.9.64:18090",
+                    // 帅威
+                    // "target" : "http://172.16.101.31:8001", 
+                    // LI
+                    // "target" : "http://172.16.100.121:8001",
+                    // 蔡辉
+                    // "target": "http://172.16.10.120:8001",
+                    // 王帅将
+                    // "target": "http://172.16.10.109:8001/",
+                    "changeOrigin" : true,
+                    "secure" : false
+                },
+                // "pathRewrite" : {
+                //     "^/api" : ""
+                // }
+                "/dataApi" : {
+                    // 服务器
+                    "target" : "http://172.16.8.39:9019",
+                    // "target": "http://172.16.100.121:8001/api",
+                    // "target": "http://172.16.10.109:8001/",
+                    "changeOrigin" : true,
+                    "secure" : false
+                }
+            },
+            "https" : false
+        },
+        "publicPath" : "./",
+        "router" : {
+            "mode" : "hash",
+            "base" : "./"
+        },
+        "template" : "index.html",
+        "sdkConfigs" : {
+            "maps" : {
+                "qqmap" : {
+                    "key" : ""
+                }
+            }
+        }
+    },
+    "mp-kuaishou" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-qq" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    }
 }

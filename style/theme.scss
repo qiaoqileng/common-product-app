@@ -1,0 +1,55 @@
+// 此文件为uView的主题变量，这些变量目前只能通过uni.scss引入才有效，另外由于
+// uni.scss中引入的样式会同时混入到全局样式文件和单独每一个页面的样式中，造成微信程序包太大，
+// 故uni.scss只建议放scss变量名相关样式，其他的样式可以通过main.js或者App.vue引入
+
+$u-main-color: #18191A;
+$u-content-color: #333333;
+$u-tips-color: #999999;
+$u-light-color: #939499;
+$u-border-color: #e4e7ed;
+$u-bg-color: var(--bg-color);
+$u-component-color: var(--component-color);
+
+$u-type-primary: var(--primary);
+$u-type-primary-light: var(--primary-light);
+$u-type-primary-disabled: var(--primary-disabled);
+$u-type-primary-dark: var(--primary-dark); 
+
+$u-type-warning: #ff9900;
+$u-type-warning-disabled: #fcbd71;
+$u-type-warning-dark: #f29100;
+$u-type-warning-light: #fdf6ec;
+
+$u-type-success: #19be6b;
+$u-type-success-disabled: #71d5a1;
+$u-type-success-dark: #18b566;
+$u-type-success-light: #dbf1e1;
+
+$u-type-error: #fa3534;
+$u-type-error-disabled: #fab6b6;
+$u-type-error-dark: #dd6161;
+$u-type-error-light: #fef0f0;
+
+$u-type-info: #909399;
+$u-type-info-disabled: #c8c9cc;
+$u-type-info-dark: #82848a;
+$u-type-info-light: #f4f4f5;
+
+$u-type-text: #303133;
+$u-type-text-disabled: #909399;
+$u-type-text-dark: #606266;
+$u-type-text-light: #c0c4cc;
+
+$u-form-item-height: 70rpx;
+$u-form-item-border-color: #dcdfe6;
+
+$u-color-white: #ffffff;
+
+/*公共组件*/
+$toolbar-height: 50rpx; // 底部nav高度
+
+/*内边距*/
+$padding: 25rpx;
+
+/*底部按钮约定距离*/
+$bottom-length: 68rpx;

@@ -193,26 +193,6 @@ $main-color: #2979FF;
 	background-color: $u-type-primary;
 }
 
-.building-bg {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	z-index: 0;
-	overflow: hidden;
-}
-
-.building-bg::after {
-	content: '';
-	width: 100%;
-	height: 300rpx;
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: -1;
-	background: url('/static/images/bg-zhengfu.png') no-repeat;
-	background-size: 100% 100%;
-}
-
 .bg-white-radius {
 	background-color: #FFFFFF;
 	border-radius: 12rpx;
@@ -255,4 +235,8 @@ $main-color: #2979FF;
 
 .word-break-all{
 	word-break: break-all;
+}
+
+.u-m-w {
+	width: 100%;
 }

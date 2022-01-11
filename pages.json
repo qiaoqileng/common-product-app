@@ -29,7 +29,193 @@
             }
             
         }
+        ,{
+            "path" : "pages/demo/component/download",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "下载器",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/demo/component/video",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "视频播放",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/demo/component/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+		,{
+		    "path" : "pages/demo/component/list-uni",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "uni列表",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/demo/websocket",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "websocket",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
+	"subPackages": [{
+			"root": "pages/demo/component",
+			"pages": [
+				{
+					"path": "tree/index/index",
+					"style": {
+						"navigationBarTitleText": "首页"
+					}
+				},
+				{
+					"path": "tree/tree/updateTree",
+					"style": {
+						"navigationBarTitleText": "更新数据"
+					}
+				},
+				{
+					"path": "tree/tree/accordion",
+					"style": {
+						"navigationBarTitleText": "手风琴模式"
+					}
+				},
+				{
+					"path": "tree/tree/base",
+					"style": {
+						"navigationBarTitleText": "基本用法"
+					}
+				},
+				{
+					"path": "tree/tree/disabled",
+					"style": {
+						"navigationBarTitleText": "禁用状态"
+					}
+				},
+				{
+					"path": "tree/tree/expandAndSelect",
+					"style": {
+						"navigationBarTitleText": "默认展开和默认选中"
+					}
+				},
+				{
+					"path": "tree/tree/filter",
+					"style": {
+						"navigationBarTitleText": "节点过滤"
+					}
+				},
+				{
+					"path": "tree/tree/filterNode",
+					"style": {
+						"navigationBarTitleText": "过滤指定节点"
+					}
+				},
+				{
+					"path": "tree/tree/lazy",
+					"style": {
+						"navigationBarTitleText": "懒加载自定义叶子节点"
+					}
+				},
+				{
+					"path": "tree/tree/nodeSelect",
+					"style": {
+						"navigationBarTitleText": "树节点的选择"
+					}
+				},
+				{
+					"path": "tree/tree/radio",
+					"style": {
+						"navigationBarTitleText": "树节点的单选"
+					}
+				},
+				{
+					"path": "tree/tree/selectable",
+					"style": {
+						"navigationBarTitleText": "可选择"
+					}
+				},
+				{
+					"path": "tree/tree/checkOnlyLeaf",
+					"style": {
+						"navigationBarTitleText": "仅叶子节点可选择"
+					}
+				},
+				{
+					"path": "tree/tree/icon",
+					"style": {
+						"navigationBarTitleText": "节点图标"
+					}
+				},
+				{
+					"path": "tree/tree/treeModal",
+					"style": {
+						"navigationBarTitleText": "弹框中使用树组件"
+					}
+				},
+				{
+					"path": "tree/tree/controlLoading",
+					"style": {
+						"navigationBarTitleText": "自主控制loading状态"
+					}
+				},
+				{
+					"path": "tree/tree/propsConfig",
+					"style": {
+						"navigationBarTitleText": "props属性配置"
+					}
+				},
+				{
+					"path": "tree/tree/controlExpand",
+					"style": {
+						"navigationBarTitleText": "开关控制全部展开/折叠"
+					}
+				},
+				{
+					"path": "tree/tree/checkAll",
+					"style": {
+						"navigationBarTitleText": "全部选中/取消选中"
+					}
+				},
+				{
+					"path": "tree/tree/deltable",
+					"style": {
+						"navigationBarTitleText": "点选择框删除"
+					}
+				},
+				{
+					"path": "tree/tree/setCurrent",
+					"style": {
+						"navigationBarTitleText": "设置当前节点"
+					}
+				}
+			    ,{
+                    "path" : "org",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

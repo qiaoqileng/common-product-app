@@ -5,6 +5,7 @@ import mixin from './libs/mixin/mixin.js'
 // 全局挂载引入http相关请求拦截插件
 import http from './libs/request'
 
+import webSocket from './libs/websocket'
 function wranning(str) {
 	// 开发环境进行信息输出,主要是一些报错信息
 	// 这个环境的来由是在程序编写时候,点击hx编辑器运行调试代码的时候,详见:
@@ -94,6 +95,9 @@ const $u = {
 	post: http.post,
 	put: http.put,
 	'delete': http.delete,
+	webSocketGet: webSocket.get,
+	webSocketPost: webSocket.post,
+	webSocket,
 	hexToRgb: colorGradient.hexToRgb,
 	rgbToHex: colorGradient.rgbToHex,
 	test,

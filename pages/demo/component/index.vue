@@ -11,6 +11,21 @@
 				demoList:[{
 					title:'form表单',
 					url:'/pages/demo/component/form'
+				},{
+					title:'下载器',
+					url:'/pages/demo/component/download'
+				},{
+					title:'视频播放',
+					url:'/pages/demo/component/video'
+				},{
+					title:'列表',
+					url:'/pages/demo/component/list'
+				},{
+					title:'uni列表',
+					url:'/pages/demo/component/list-uni'
+				},{
+					title:'tree',
+					url:'/pages/demo/component/tree/index/index'
 				}]
 			}
 		},

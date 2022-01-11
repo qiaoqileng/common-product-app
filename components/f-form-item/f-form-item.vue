@@ -4,6 +4,12 @@
 		<f-text-area v-else-if="option.type === 'textarea'" :form="form" :option="option"/>
 		<f-button v-else-if="option.type === 'button'" :form="form" :option="option"/>
 		<f-select v-else-if="option.type === 'select'" :form="form" :option="option"/>
+		<c-mutil-select v-else-if="option.type === 'mutil-select'" :form="form" :option="option"/>
+		<c-file-upload v-else-if="option.type === 'attach'"
+		:list="option.fileList"
+		 :uploadSwitch="option.mode != 'detail'"
+		 :upload_auto="option.autoUpload"
+		 :upload_count="option.maxCount" :form="form" :option="option"></c-file-upload>
 		<view :class="{'u-text-right':option.right}" v-else >{{form[option.key]}}</view>
 	</view>
 </template>
@@ -13,7 +19,7 @@
 	 * formItem
 	 * @description 本组件根据不同type展现各类表单组件
 	 * @tutorial https://github.com/qiaoqileng/common-product-app/wiki/form%E8%A1%A8%E5%8D%95
-	 * @property {type} text--view; edit--input; select--select; attach--c-file-upload;textarea--c-text-area
+	 * @property {type} text--view; edit--input; select--select; attach--c-file-upload;textarea--c-text-area;mutil-select--pms-list-selector-pop
 	 */
 	export default {
 		name:"f-form-item",
@@ -29,15 +35,18 @@
 				default(){
 					return {}
 				}
-			}
+			},
+			originArray:{
+				type:Array,
+				default(){
+					return []
+				}
+			},
 		},
 		data() {
 			return {
-				value:''
+				value:'',
 			};
-		},
-		mounted() {
-			// this.value = this.form[this.option.key]
 		}
 	}
 </script>
