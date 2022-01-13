@@ -26,6 +26,9 @@
 				},{
 					title:'tree',
 					url:'/pages/demo/component/tree/index/index'
+				},{
+					title:'扫描todo',
+					url:'/pages/demo/component/scan'
 				}]
 			}
 		},

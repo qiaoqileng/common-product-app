@@ -5,6 +5,7 @@
 </template>
 
 <script>
+	import { storeUtil } from "@/utils/fun.js"
 	export default {
 		data() {
 			return {
@@ -17,8 +18,12 @@
 				}]
 			}
 		},
-		onLoad() {
-
+		onLoad(opt) {
+			const {token} = opt
+			if (token) {
+				storeUtil.setTokenKey('x-access-token')
+				storeUtil.setToken(token)
+			}
 		},
 		methods: {
 			jump(url){

@@ -4,8 +4,8 @@
  * */
 // 未登录code
 const errorCode = ['-19', '-159', '-201', '-202'];
-import {BASE_URL, BASE_DATA_URL} from 'utils/constant';
-import util from "utils/fun"
+import {BASE_URL, BASE_DATA_URL} from '@/utils/config';
+import {storeUtil,commonUtil} from "@/utils/fun"
 
 function configFactory(baseUrl) {
   return {
@@ -27,24 +27,23 @@ let configDic = {
 
 let defaultConfig = configDic['api']
 
-const install = (Vue) => {
+const interceptor = (http) => {
+  http.setConfig(configDic['api']);
 
-  Vue.prototype.$u.http.setConfig(configDic['api']);
-
-  Vue.prototype.$u.http.interceptor.request = (config) => {
-
+  http.interceptor.request = (config) => {
     // console.log('域名')
     // console.log(uni.getStorageSync('api'))
 
     if (config['url'] && config['url'].startsWith('/api')) {
-      Vue.prototype.$u.http.setConfig(configDic['api']);
+      http.setConfig(configDic['api']);
     } else if (config['url'] && config['url'].startsWith('/dataApi')) {
-      Vue.prototype.$u.http.setConfig(configDic['dataApi']);
+      http.setConfig(configDic['dataApi']);
     }
 
 		// 获取token， 设置用户凭证
-    const key = util.getTokenKey()
-    const val = util.getToken()
+    const key = storeUtil.getTokenKey()
+    const val = storeUtil.getToken()
+	
     if (key) config.header[key] = val
     if (config.data && config.data._json) {
       config.header['content-type'] = 'application/json'
@@ -52,30 +51,28 @@ const install = (Vue) => {
 
 	  return config
    }
-  Vue.prototype.$u.http.interceptor.response = (response) => {
+  http.interceptor.response = (response) => {
     if (response) {
-      if (response.data.code) {
+      if (response.code) {
         // console.log(response.data)
-        if (response.data.code == 401 || response.data.code == 203) {
+        if (response.code == 401 || response.code == 203) {
           uni.clearStorageSync()
-          util.setTimeout(()=>{
+          commonUtil.setTimeout(()=>{
             uni.redirectTo({
               url: '../login/index'
             })
           })
         } else {
-          if(response.data.code != 200){
-            return Promise.reject(response.data)
+          if(response.code != 200){
+            return Promise.reject(response)
           }
-          return response.data
+          return response
         }
       } else {
-        util.toast(`服务器错误`)
+        commonUtil.toast(`服务器错误`)
       }
     }
   }
 }
 
-export default {
-	install,
-}
+export default interceptor

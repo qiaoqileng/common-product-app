@@ -2,7 +2,8 @@
 	"easycom": {
 		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
 		"^c-(.*)": "@/components/c-$1/c-$1.vue",
-		"^f-(.*)": "@/components/f-$1/f-$1.vue"
+		"^f-(.*)": "@/components/f-$1/f-$1.vue",
+		"^uni-(.*)": "@/components/uni-ui/uni-$1/uni-$1.vue"
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
@@ -73,7 +74,15 @@
                 "enablePullDownRefresh": false
             }
             
-        }
+        },{
+		    "path" : "pages/demo/component/scan",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "扫描",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
     ],
 	"subPackages": [{
 			"root": "pages/demo/component",

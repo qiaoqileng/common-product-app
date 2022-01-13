@@ -4,6 +4,9 @@ import mixin from './libs/mixin/mixin.js'
 // import wxshare from './libs/mixin/mpShare.js'
 // 全局挂载引入http相关请求拦截插件
 import http from './libs/request'
+import interceptor from '@/utils/http/interceptor.js';
+
+interceptor(http)
 
 import webSocket from './libs/websocket'
 function wranning(str) {
